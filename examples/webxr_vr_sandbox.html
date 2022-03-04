@@ -10,6 +10,7 @@
 		<div id="basic-html-mesh" style="position: absolute; left: 100px">
 			Items:
 			<!-- this is a comment! -->
+			<button class="btn-count">Count</button>
 			<ul>
 				<li>one</li>
 				<li>two</li>
@@ -221,8 +222,13 @@
 				group.add( statsMesh );
 
 				// add basic htmlmesh
-				basicHtmlMesh = new HTMLMesh(document.querySelector('#basic-html-mesh'));
-				basicHtmlMesh.position.x = - 0.55;
+				let basicHtmlMeshEl = document.querySelector('#basic-html-mesh');
+				let count = 0;
+				let btnCountEl = window.btncountel = basicHtmlMeshEl.querySelector('.btn-count');
+				btnCountEl.addEventListener('click', () => btncountel.textContent=++count);
+
+				basicHtmlMesh = new HTMLMesh(basicHtmlMeshEl);
+				basicHtmlMesh.position.x = - 0.5;
 				basicHtmlMesh.position.y = 2;
 				basicHtmlMesh.position.z = - 0.6;
 				basicHtmlMesh.rotation.y = Math.PI / 4;
